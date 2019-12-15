@@ -35,13 +35,11 @@ SOFTWARE.
 #define WIFI_SSID "your_wifi_name" // your wifi ssid
 #define WIFI_PASS "your_wifi_pass" // your wifi password
 
-#define DHTPIN 0 
+#define DHTPIN 0 // D3 Pin in NodeMCU
 
 DHT dht(DHTPIN, DHT11);
 
 
-
-HTTPClient http;
 
 
 void setup() {
@@ -68,25 +66,10 @@ void setup() {
   
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
 
- 
-
-  pinMode(12,OUTPUT);
-  pinMode(13,OUTPUT);
-  pinMode(14,OUTPUT);
-  pinMode(LED_BUILTIN,OUTPUT);
-
   Firebase.set("SensorData/0/area","Kalyani,Nadia"); //Json Object in databse
 
-
-  
   
 }
-
-
-
-
-
-
 
 
 void loop(){
